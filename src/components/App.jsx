@@ -1,18 +1,20 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Layout from './Layout';
+import HomePage from 'pages/HomePage';
+import RegisterPage from 'pages/Register/RegisterPage';
+import LoginPage from 'pages/Login/LoginPage';
+import ContactsPage from 'pages/Contacts/ContactsPage';
 import { ToastContainer } from 'react-toastify';
-import ContactForm from './ContactForm';
-import ContactList from './ContactList';
-import Filter from './Filter';
 import { useEffect } from 'react';
+import { useDispatch} from 'react-redux';
 import { fetchContacts } from 'redux/contactsOperations';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectError, selectIsLoading } from 'redux/contactsSelectors';
+
 
 
 export const App = () => {
   const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
+
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -21,13 +23,16 @@ export const App = () => {
 
   return (
     <div className="container">
-      <h1>Phonebook</h1>
-      <ContactForm />
-      <h2>Contacts</h2>
-      <Filter/>
-      {isLoading && !error && <b>Loading...</b>}
-      {error && <b>{error}</b>}
-      <ContactList/>
+
+       <Routes>
+        <Route path="/" element={<Layout/>}>
+          <Route index element={<HomePage/>}/>
+          <Route path="/register" element={<RegisterPage/>}/>
+          <Route path="/login" element={<LoginPage/>}/>
+          <Route path="/contacts" element={<ContactsPage/>}/>
+        </Route>
+       </Routes>
+
       <ToastContainer autoClose={2000} />
     </div>
   );
