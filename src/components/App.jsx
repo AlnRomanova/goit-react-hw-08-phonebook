@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useAuth } from 'hook/useAuth';
 import Layout from './Layout';
 import HomePage from 'pages/HomePage';
 import RegisterPage from 'pages/Register/RegisterPage';
@@ -8,20 +9,23 @@ import ContactsPage from 'pages/Contacts/ContactsPage';
 import { ToastContainer } from 'react-toastify';
 import { useEffect } from 'react';
 import { useDispatch} from 'react-redux';
-import { fetchContacts } from 'redux/contactsOperations';
+import { refreshUser } from 'redux/auth/authOperations';
 
 
 
 export const App = () => {
   const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
 
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(refreshUser());
   }, [dispatch]);
 
 
-  return (
+  return isRefreshing ? (
+    <b>Refreshing user...</b>
+  ) : (
     <div className="container">
 
        <Routes>
