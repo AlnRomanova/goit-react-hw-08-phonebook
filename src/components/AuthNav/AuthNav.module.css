@@ -1,11 +1,10 @@
-.link {
+.titleAuth {
   display: inline-block;
-  text-decoration: none;
-  padding: 12px;
+  padding: 25px;
+  font-family: "Roboto Mono", monospace;
   font-weight: 700;
-  color: #2a363b;
+  font-size:  25px;
+  text-transform: uppercase;
+  color: rgb(242, 229, 240);
 }
 
-.link.active {
-  color: #e84a5f;
-}

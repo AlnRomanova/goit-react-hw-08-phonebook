@@ -1,0 +1,26 @@
+.homeBox {
+  min-height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeTitle {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 800;
+  font-size:  35px;
+  text-transform: uppercase;
+  text-align: center;
+
+}
+
+.homeText {
+  margin-top: 30px;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 800;
+  font-size:  25px;
+  text-transform: uppercase;
+  text-align: center;
+
+}
