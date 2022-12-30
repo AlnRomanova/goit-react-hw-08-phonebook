@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useAuth } from 'hook/useAuth';
 import Layout from './Layout';
-import HomePage from 'pages/HomePage';
+import HomePage from 'pages/Home/HomePage';
 import RegisterPage from 'pages/Register/RegisterPage';
 import LoginPage from 'pages/Login/LoginPage';
 import ContactsPage from 'pages/Contacts/ContactsPage';
