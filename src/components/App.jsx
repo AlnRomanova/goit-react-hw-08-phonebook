@@ -17,27 +17,23 @@ export const App = () => {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
 
-
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-
   return isRefreshing ? (
     <b>Refreshing user...</b>
   ) : (
-    <div className="container">
-
-       <Routes>
-        <Route path="/" element={<Layout/>}>
-          <Route index element={<HomePage/>}/>
-          <Route path="/register" element={<RegisterPage/>}/>
-          <Route path="/login" element={<LoginPage/>}/>
-          <Route path="/contacts" element={<ContactsPage/>}/>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/contacts" element={<ContactsPage />} />
         </Route>
-       </Routes>
-
+      </Routes>
       <ToastContainer autoClose={2000} />
-    </div>
+    </>
   );
 };
