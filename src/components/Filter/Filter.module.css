@@ -6,14 +6,13 @@
   font-size: 18px;
   line-height: 1.15;
   letter-spacing: 0.02em;
-  margin-top: 40px;
 }
 
 
 .filterInput {
   width: 400px;
   height: 30px;
-  margin: 0 auto;
+  margin: 15px auto;
   padding-left: 10px;
   padding-right: 10px;
   margin-top: 10px;
@@ -23,10 +22,9 @@
   letter-spacing: 0.01em;
 
 
-  border: 1px solid rgb(168, 224, 243);
+  border: 2px solid rgb(168, 224, 243);
   border-radius: 8px;
   cursor: pointer;
-
 
 }
 

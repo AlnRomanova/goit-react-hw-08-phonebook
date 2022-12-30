@@ -7,7 +7,7 @@ import AppBar from 'components/AppBar';
 const Layout = () => {
   return (
     <>
-      <GridItem pl="2" bg="pink.300" area={'header'}>
+      <GridItem pl="2" bg="pink.200" area={'header'}>
         <AppBar />
       </GridItem>
       <Outlet />

@@ -6,7 +6,6 @@ import React from 'react';
  const ContactsPage = () => {
   return (
     <>
-    <h2>List of contacts</h2>
     <ContactForm/>
     <ContactList/>
     <Filter/>

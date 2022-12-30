@@ -13,8 +13,7 @@ const ContactList = () => {
     <ul className={css.contacts}>
       {contacts.map(({ id, name, number }) => (
         <li className={css.contactsItem} key={id}>
-          <p className={css.contactsName}>{name}:</p>
-          <p className={css.contactsNumber}>{number}</p>
+          <p className={css.contactsDetails}>{name}: {number}</p>
           <button
             className={css.contactsBtn}
             type="button"

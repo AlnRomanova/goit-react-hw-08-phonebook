@@ -1,33 +1,47 @@
 .contacts {
+  width: 400px;
+  padding: 0;
+  margin: 50px auto;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+
 }
 
 .contactsItem {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-start;
+  padding: 0 20px;
+  gap: 30px;
 
-  margin-top: 10px;
-  margin-left: 25px;
 }
 
-.contactsName {
-  margin: auto;
-  font-size: 20px;
+.contactsDetails {
+  font-family: "Roboto Mono", monospace;
+  font-size: 18px;
+  margin-top: 20px;
   margin-bottom: 6px;
 }
 
 .contactsBtn {
-  margin-top: 7px;
+  margin-left: auto;
   border-radius: 4px;
-  font-size: 12px;
+  font-family: "Roboto Mono", monospace;
+  font-size: 13px;
   text-transform: uppercase;
   background-color: white;
-  padding: 4px 4px;
-  border: 1px solid rgb(153, 198, 246);
+  padding: 4px 12px;
+  border: 2px solid rgb(153, 198, 246);
   cursor: pointer;
 }
 
 .contactsBtn:hover,
 .contactsBtn:focus {
-  background-color: rgb(104, 172, 245);
+  background-color: rgb(248, 163, 198);
+  border: transparent;
   color: white;
 }
