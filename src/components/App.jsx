@@ -1,4 +1,5 @@
 import { lazy} from 'react';
+import { Skeleton} from '@chakra-ui/react'
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from 'hook/useAuth';
 import Layout from './Layout';
@@ -23,7 +24,7 @@ export const App = () => {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <b>Refreshing user...</b>
+    <Skeleton startColor='pink.500' endColor='orange.500' height='20px' />
   ) : (
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -49,5 +50,6 @@ export const App = () => {
         </Route>
         <Route path="*" element={<Navigate to="/" />}/>
       </Routes>
+
   );
 };

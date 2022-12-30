@@ -61,8 +61,7 @@ export const refreshUser = createAsyncThunk(
     const persistedToken = state.auth.token;
 
     if (persistedToken === null) {
-      rejectWithValue();
-      return;
+      return rejectWithValue('Unable to fetch user')
     }
 
     setAuthHeader(persistedToken);

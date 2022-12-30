@@ -5,7 +5,6 @@ import { register } from 'redux/auth/authOperations';
 import css from './Register.module.css';
 
 
-
 const RegisterPage = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState('');
@@ -31,6 +30,7 @@ const RegisterPage = () => {
         return;
     }
   };
+
 
   const handlerSubmit = e => {
     e.preventDefault();
@@ -65,10 +65,9 @@ const RegisterPage = () => {
             name="email"
             value={email}
             onChange={handleNameChange}
-            title="Must contain at least 10 or more characters "
-            required
 
           />
+
         </label>
         <label htmlFor="" className={css.formLabel}>
           Password
