@@ -1,0 +1,33 @@
+.userMenu {
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  gap: 25px;
+}
+
+.userName {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: rgb(242, 229, 240)
+}
+
+.btnLogOut {
+    display: block;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color:rgb(168, 224, 243);
+    color: white;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+
+.btnLogOut:hover, .btnLogOut:focus {
+    background-color: white;
+    color:rgb(248, 163, 198);
+}

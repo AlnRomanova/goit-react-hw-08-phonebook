@@ -1,33 +1,35 @@
 .filterLabel {
   display: flex;
   flex-direction: column;
+  font-family: "Roboto Mono", monospace;
+  text-align: center;
   font-size: 18px;
   line-height: 1.15;
   letter-spacing: 0.02em;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 
 .filterInput {
-  width: 45%;
-  height: 27px;
+  width: 400px;
+  height: 30px;
+  margin: 0 auto;
   padding-left: 10px;
   padding-right: 10px;
-  margin-bottom: 10px;
-  margin-top: 5px;
-
+  margin-top: 10px;
+  font-family: "Roboto Mono", monospace;
   font-size: 13px;
   line-height: 1.15;
   letter-spacing: 0.01em;
 
 
-  border: 1px solid rgb(153, 198, 246);
-  border-radius: 4px;
+  border: 1px solid rgb(168, 224, 243);
+  border-radius: 8px;
   cursor: pointer;
 
 
 }
 
 .filterInput:hover, .filterInput:focus {
-  border: 2px solid rgb(140, 191, 245);
+  border: 2px solid rgb(248, 163, 198);
 }

@@ -1,11 +1,9 @@
 import css from './Filter.module.css';
-import { useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { filterContacts } from 'redux/contacts/contactsFilterSlice';
-
 
 const Filter = () => {
   const dispatch = useDispatch();
-
 
   const changeFilter = e => {
     dispatch(filterContacts(e.currentTarget.value.toLowerCase()));

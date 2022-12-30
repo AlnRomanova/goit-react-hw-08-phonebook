@@ -59,7 +59,7 @@ const LoginPage = () => {
           onChange={handleNameChange}
         />
       </label>
-      <button className={css.btn}>Add contacts</button>
+      <button className={css.btn}>Log In</button>
     </form>
   );
 }

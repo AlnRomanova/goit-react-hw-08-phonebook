@@ -7,20 +7,20 @@
 }
 
 .homeTitle {
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Roboto Mono', monospace;
   font-weight: 800;
-  font-size:  35px;
+  font-size: 35px;
   text-transform: uppercase;
   text-align: center;
-
+  color: #2a363b;
 }
 
 .homeText {
   margin-top: 30px;
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Roboto Mono', monospace;
   font-weight: 800;
-  font-size:  25px;
+  font-size: 25px;
   text-transform: uppercase;
   text-align: center;
-
+  color: #2a363b;
 }

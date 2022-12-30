@@ -7,10 +7,10 @@ const Navigation = () => {
   const { isLoggedIn } = useAuth();
 
   return (
-    <>
+    <nav>
         <NavLink className={css.title}  to="/">Home</NavLink>
-        {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
-    </>
+        {isLoggedIn && <NavLink className={css.title} to="/contacts">Contacts</NavLink>}
+    </nav>
   );
 };
 
