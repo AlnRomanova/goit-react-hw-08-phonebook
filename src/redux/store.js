@@ -14,7 +14,7 @@ import {
 } from 'redux-persist';
 
 const persistConfig = {
-  key: 'root',
+  key: 'auth',
   storage,
   whitelist: ['token'],
 };
@@ -33,4 +33,4 @@ export const store = configureStore({
     }),
 });
 
-export let persistor = persistStore(store);
+export const persistor = persistStore(store);

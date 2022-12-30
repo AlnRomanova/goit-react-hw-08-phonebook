@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
 const setAuthHeader = token => {
@@ -12,16 +11,18 @@ const clearAuthHeader = () => {
   axios.defaults.headers.common.Authorization = '';
 };
 
-
 export const register = createAsyncThunk(
   'auth/register',
-  async ({name, email, password}, { rejectWithValue }) => {
+  async ({ name, email, password }, { rejectWithValue }) => {
     try {
-      const response = await axios.post('/users/signup', {name, email, password} );
+      const response = await axios.post('/users/signup', {
+        name,
+        email,
+        password,
+      });
       setAuthHeader(response.data.token);
-      console.log(response)
+      console.log(response);
       return response.data;
-
     } catch (error) {
       return rejectWithValue(error);
     }
@@ -30,9 +31,9 @@ export const register = createAsyncThunk(
 
 export const login = createAsyncThunk(
   'auth/login',
-  async ({email, password}, { rejectWithValue }) => {
+  async ({ email, password }, { rejectWithValue }) => {
     try {
-      const {data} = await axios.post('/users/login', {email, password});
+      const { data } = await axios.post('/users/login', { email, password });
       setAuthHeader(data.token);
       return data;
     } catch (error) {
@@ -41,10 +42,9 @@ export const login = createAsyncThunk(
   }
 );
 
-
 export const logOut = createAsyncThunk(
   'auth/logout',
-  async (_, {rejectWithValue}) => {
+  async (_, { rejectWithValue }) => {
     try {
       await axios.post('/users/logout');
       clearAuthHeader();
@@ -54,23 +54,23 @@ export const logOut = createAsyncThunk(
   }
 );
 
-
 export const refreshUser = createAsyncThunk(
-  'auth/refresh',
-  async (_, {rejectWithValue}) => {
-    const state = rejectWithValue.getState();
+  'user/current',
+  async (_, { rejectWithValue, getState }) => {
+    const state = getState();
     const persistedToken = state.auth.token;
 
     if (persistedToken === null) {
-      return rejectWithValue('Unable to fetch user');
+      rejectWithValue();
+      return;
     }
 
+    setAuthHeader(persistedToken);
     try {
-      setAuthHeader(persistedToken);
-      const {data} = await axios.get('/users/me');
+      const { data } = await axios.get('/users/current');
       return data;
     } catch (error) {
-      return rejectWithValue(error.message);
+      rejectWithValue(error.message);
     }
-  })
-
+  }
+);
