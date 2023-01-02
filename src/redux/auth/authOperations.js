@@ -22,7 +22,6 @@ export const register = createAsyncThunk(
         password,
       });
       setAuthHeader(response.data.token);
-      console.log(response);
       return response.data;
     } catch (error) {
       return rejectWithValue(error);

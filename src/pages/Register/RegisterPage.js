@@ -36,7 +36,6 @@ const RegisterPage = () => {
     e.preventDefault();
 
     dispatch(register({ name, email, password }));
-    console.log({ name, email, password });
     setName('');
     setEmail('');
     setPassword('');
